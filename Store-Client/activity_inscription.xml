@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.wajdi.inscription.inscription">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+
+        android:background="login"
+        android:ems="10"
+        android:id="@+id/txtlog"
+        android:layout_below="@+id/txtnom"
+        android:layout_alignStart="@+id/txtnom"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Mot de passe"
+        android:ems="10"
+        android:layout_below="@+id/txtlog"
+        android:layout_alignStart="@+id/txtlog"
+        android:layout_marginTop="12dp"
+        android:id="@+id/txtmp" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:id="@+id/spquest"
+        android:layout_below="@+id/txtconfirm"
+        android:layout_alignEnd="@+id/txtconfirm"
+        android:layout_alignStart="@+id/txtconfirm" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Réponse"
+        android:ems="10"
+        android:layout_below="@+id/spquest"
+        android:layout_alignStart="@+id/spquest"
+        android:layout_marginTop="14dp"
+        android:id="@+id/txtrep" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Confirmer Mot de Passe"
+        android:ems="10"
+        android:id="@+id/txtconfirm"
+        android:layout_below="@+id/txtmp"
+        android:layout_alignStart="@+id/txtmp" />
+
+    <TextView
+        android:text="Magasin Informatique"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="48dp" />
+
+    <Button
+        android:text="back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/btnback"
+        android:visibility="visible" />
+
+    <Button
+        android:text="inscription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:id="@+id/btninscr"
+        android:layout_below="@+id/txtrep"
+        android:layout_toEndOf="@+id/btnback" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Nom et Prenom"
+        android:ems="10"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/txtnom"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
