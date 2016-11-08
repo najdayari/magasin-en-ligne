@@ -7,8 +7,24 @@ public class Produit {
 	private int Stock;
 	private float PrixTTC;
 	private int PointProd;
-	private int CodeCat;
+	private String CodeCat;
 	private int qte=1;
+	
+	public Produit() {
+		
+	}
+	
+	public Produit(int numProd, String libelle, int stock, float prixTTC, int pointProd, String codeCat) {
+		super();
+		NumProd = numProd;
+		Libelle = libelle;
+		Stock = stock;
+		PrixTTC = prixTTC;
+		PointProd = pointProd;
+		CodeCat = codeCat;
+	}
+	
+	
 	
 	public int getQte() {
 		return qte;
@@ -46,23 +62,12 @@ public class Produit {
 	public void setPointProd(int pointProd) {
 		PointProd = pointProd;
 	}
-	public int getCodeCat() {
+	public String getCodeCat() {
 		return CodeCat;
 	}
-	public void setCodeCat(int codeCat) {
-		CodeCat = codeCat;
-	}
-	public Produit(int numProd, String libelle, int stock, float prixTTC, int pointProd, int codeCat) {
-		super();
-		NumProd = numProd;
-		Libelle = libelle;
-		Stock = stock;
-		PrixTTC = prixTTC;
-		PointProd = pointProd;
+	public void setCodeCat(String codeCat) {
 		CodeCat = codeCat;
 	}
 	
-	public Produit() {
-		
-	}
+	
 }
