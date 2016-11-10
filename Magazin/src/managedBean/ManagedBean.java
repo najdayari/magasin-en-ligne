@@ -19,7 +19,9 @@ public class ManagedBean {
 
 	private Produit pr = new Produit();
 	private ProduitDao p = new ProduitDao();
+
 	private ArrayList<Produit> l = new ArrayList<Produit>();
+
 	private int qte=1;
 	
 	public ManagedBean() {
@@ -54,6 +56,10 @@ public class ManagedBean {
 	
 	public void setP(ProduitDao p) {
 		this.p = p;
+	}
+
+	public void setL(ArrayList<Produit> l) {
+		this.l = l;
 	}
 
 
@@ -129,5 +135,8 @@ public class ManagedBean {
 		
 		
 	}
+
+
+
 	
 }

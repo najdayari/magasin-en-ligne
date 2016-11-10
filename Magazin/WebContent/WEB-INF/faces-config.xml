@@ -10,13 +10,8 @@
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
-		<managed-bean-name>Gp</managed-bean-name>
-		<managed-bean-class>managedBean.GestionProduit</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>
-	<managed-bean>
-		<managed-bean-name>MBprod2</managed-bean-name>
-		<managed-bean-class>managedBean.GestionProduit</managed-bean-class>
+		<managed-bean-name>mBProd</managed-bean-name>
+		<managed-bean-class>managedBean.ManagedBean</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
 
