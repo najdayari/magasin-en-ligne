@@ -41,14 +41,11 @@ public class ProduitDao {
 		                a.setStock(rs.getInt(3));
 		                a.setPrixTTC(rs.getFloat(4));
 		                a.setPointProd(rs.getInt(5));
-		                a.setCodeCat(rs.getInt(6));
+		                a.setCodeCat(rs.getString(6));
 		                
 		               
 		                L.add(a);
-		                
-		                
-		    		
-		            
+
 				}
 			} catch (SQLException e) {
 	

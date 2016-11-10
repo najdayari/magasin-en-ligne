@@ -2,12 +2,12 @@ package entities;
 
 public class Produit {
 
-	private int NumProd;
-	private String Libelle;
-	private int Stock;
-	private float PrixTTC;
-	private int PointProd;
-	private String CodeCat;
+	private int numprod;
+	private String libelle;
+	private int stock;
+	private float prixTTC;
+	private int pointProd;
+	private String codeCat;
 	private int qte=1;
 	
 	public Produit() {
@@ -16,12 +16,12 @@ public class Produit {
 	
 	public Produit(int numProd, String libelle, int stock, float prixTTC, int pointProd, String codeCat) {
 		super();
-		NumProd = numProd;
-		Libelle = libelle;
-		Stock = stock;
-		PrixTTC = prixTTC;
-		PointProd = pointProd;
-		CodeCat = codeCat;
+		this.numprod = numProd;
+		this.libelle = libelle;
+		this.stock = stock;
+		this.prixTTC = prixTTC;
+		this.pointProd = pointProd;
+		this.codeCat = codeCat;
 	}
 	
 	
@@ -32,42 +32,55 @@ public class Produit {
 	public void setQte(int qte) {
 		this.qte = qte;
 	}
+
 	public int getNumProd() {
-		return NumProd;
+		return numprod;
 	}
+
 	public void setNumProd(int numProd) {
-		NumProd = numProd;
+		this.numprod = numProd;
 	}
+
 	public String getLibelle() {
-		return Libelle;
+		return libelle;
 	}
+
 	public void setLibelle(String libelle) {
-		Libelle = libelle;
+		this.libelle = libelle;
 	}
+
 	public int getStock() {
-		return Stock;
+		return stock;
 	}
+
 	public void setStock(int stock) {
-		Stock = stock;
+		this.stock = stock;
 	}
+
 	public float getPrixTTC() {
-		return PrixTTC;
+		return prixTTC;
 	}
+
 	public void setPrixTTC(float prixTTC) {
-		PrixTTC = prixTTC;
+		this.prixTTC = prixTTC;
 	}
+
 	public int getPointProd() {
-		return PointProd;
+		return pointProd;
 	}
+
 	public void setPointProd(int pointProd) {
-		PointProd = pointProd;
+		this.pointProd = pointProd;
 	}
+
 	public String getCodeCat() {
-		return CodeCat;
+		return codeCat;
 	}
+
 	public void setCodeCat(String codeCat) {
-		CodeCat = codeCat;
+		this.codeCat = codeCat;
 	}
+	
 	
 	
 }

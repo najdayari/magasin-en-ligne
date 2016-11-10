@@ -73,4 +73,6 @@ public void setP(ProduitDao p) {
 		RequestContext.getCurrentInstance().showMessageInDialog(msg);}
 		return "";
 	}
+	
+	
 }
