@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml" 
+		xmlns:f="http://java.sun.com/jsf/core" 
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:p="http://primefaces.org/ui">
+<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Ajouter produit</title>
+</h:head>
+<h:body>
+	<f:view>
+		<h:form id="AjoutProduit">
+			<p:panel header="Ajout produits" style="font-size:16px">
+				<h:panelGrid columns="2" cellpading="10">
+				
+					<p:outputLabel value="Numero"></p:outputLabel>
+					<p:inputText value="#{mbe.pr.numProd}" />
+					
+					<p:outputLabel value="Libelle"></p:outputLabel>
+					<p:inputText value="#{mbe.pr.libelle}"/>
+					
+					<p:outputLabel value="Stock"></p:outputLabel>
+					<p:inputText value="#{mbe.pr.stock}" />
+					
+					<p:outputLabel value="PrixTTC"></p:outputLabel>
+					<p:inputText value="#{mbe.pr.prixTTC}" />
+					
+					<p:outputLabel value="Points"></p:outputLabel>
+					<p:inputText value="#{mbe.pr.pointProd}" />
+					
+					<p:outputLabel value="Catégorie"></p:outputLabel>
+					<p:selectOneMenu value="#{mbe.pr.codeCat}">
+						<!--  <f:selectItem itemLabel="PC" itemValue="PC" />-->
+						<f:selectItem itemLabel="Select One" itemValue="" />  
+                        <f:selectItems itemLabel="#{mbe.pr.codeCat}" itemValue="#{mbe.pr.codeCat}"/>  						
+					
+					</p:selectOneMenu>
+					
+					<p:commandButton value="Ajouter" action="#{mbe.insert}"></p:commandButton>
+					
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+	</f:view>	
+	
+</h:body>
+</html>
