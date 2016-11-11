@@ -19,7 +19,7 @@ public class ManagedBean {
 
 	private Produit pr = new Produit();
 	private ProduitDao p = new ProduitDao();
-
+	
 	private ArrayList<Produit> l = new ArrayList<Produit>();
 
 	private int qte=1;
@@ -27,17 +27,14 @@ public class ManagedBean {
 	public ManagedBean() {
 			
 		}
-	
 		
 	public int getQte() {
 			return qte;
 		}
 
-
 	public void setQte(int qte) {
 		this.qte = qte;
 	}
-
 
 	public Produit getPr() {
 		return pr;
