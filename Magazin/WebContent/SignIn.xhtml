@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml" 
+		xmlns:f="http://java.sun.com/jsf/core" 
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:b="http://bootsfaces.net/ui"
+		xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta http-equiv="X-UA-Conpatible" content="IE=edge"/>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	
+<title>Sign in</title>
+
+        <style type="text/css">
+            .form-signin {
+                margin: 0 auto;
+                max-width: 330px;
+                padding: 15px;
+            }
+        </style>
+</h:head>
+
+<body style="padding-top: 60px; background-color:#E6EAE8;">
+           <h:form id="loginForm">
+           
+  <b:container layout="fluid">
+    <p:panel title="login screen" look="primary" style="width:99%;height:100%;">
+    
+    <center><i><b> Magasin en ligne </b></i></center>
+    <br />
+    <br/>
+      <p:row>
+        <b:column medium-screen="2">
+          <h:outputText value="Nom d'utilisateur:" for="username" />
+          <br />
+          <br />
+        </b:column>
+        <b:column medium-screen="4">
+          <p:inputText placeholder="Nom d'utilisateur" id="username" value=""
+                       ajax="true" autocomplete="false" update="@(.message)">
+            <f:facet name="prepend">
+              <b:icon name="user" />
+            </f:facet>
+          </p:inputText>
+         
+        </b:column>
+        <br />
+        <br />
+        <b:column medium-screen="6" style-class="message">
+          <b:message for="username" />
+        </b:column>
+      </p:row>
+      <b:row tooltip="This password has fancy error messages.">
+        <b:column medium-screen="2">
+          <h:outputText value="Mot de passe:" />
+          <br />
+          <br />
+        </b:column>
+        <b:column medium-screen="4">
+          <p:password placeholder="Mot de passe" id="password" value=""
+                         ajax="true" autocomplete="false" update="@(.message)">
+            <f:facet name="prepend">
+              <b:iconAwesome name="key" />
+            </f:facet>
+          </p:password>
+        </b:column>
+        <b:column span="2">
+          <p:link  value="mot de passe oublié ?" >
+		</p:link>
+        </b:column>
+        <br />
+        <br />
+        <b:column medium-screen="6" styleClass="message">
+          <b:message for="password" line-break-tag=""></b:message>
+        </b:column>
+      </b:row>
+      <b:row>
+        <b:column span="2" offset="2">
+          <Center><p:commandButton value="Connexion" onclick="ajax:login.login()" update="@form" look="primary"
+            style="width:50%" /></Center>
+        </b:column>
+        
+      </b:row>
+    </p:panel>
+  </b:container>
+</h:form>
+</body>
+</html>

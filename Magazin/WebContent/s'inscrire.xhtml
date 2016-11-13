@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml" 
+		xmlns:f="http://java.sun.com/jsf/core" 
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:b="http://bootsfaces.net/ui"
+		xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta http-equiv="X-UA-Conpatible" content="IE=edge"/>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	
+<title>s'inscrire</title>
+
+        <style type="text/css">
+            .form-signin {
+                margin: 0 auto;
+                max-width: 330px;
+                padding: 15px;
+            }
+        </style>
+</h:head>
+
+<body style="padding-top: 60px; background-color:#E6EAE8;">
+           <h:form id="InsForm">
+           
+  <b:container layout="fluid">
+    <p:panel title="inscription screen" look="primary" style="width:99%;height:100%;">
+    
+    <center><i><b> Magasin en ligne </b></i></center>
+    <br />
+    <br/>
+    <fieldset>
+    <legend><b> Inscription </b></legend>
+     <br />
+    <br/>
+      <p:row>
+        <b:column medium-screen="2">
+          <h:outputText value="Nom :" for="username" />
+          <br />
+          <br />
+        </b:column>
+        <b:column medium-screen="4">
+          <p:inputText placeholder="" id="nom" value=""
+                       ajax="true" autocomplete="false" update="@(.message)">
+            <f:facet name="prepend">
+              <b:icon name="user" />
+            </f:facet>
+          </p:inputText>
+         
+        </b:column>
+        <br />
+        <br />
+        <b:column medium-screen="6" style-class="message">
+          <b:message for="username" />
+        </b:column>
+      </p:row>
+      <p:row>
+        <p:column medium-screen="2">
+          <h:outputText value="Prénom :" for="username" />
+          <br />
+          <br />
+        </p:column>
+        <b:column medium-screen="4">
+          <p:inputText placeholder="" id="prénom" value=""
+                       ajax="true" autocomplete="false" update="@(.message)">
+            <f:facet name="prepend">
+              <b:icon name="user" />
+            </f:facet>
+          </p:inputText>
+         
+        </b:column>
+        <br/>
+        <br />
+        <b:column medium-screen="2">
+          <h:outputText value="Nom d'Utilisateur :" for="username" />
+          <br/>
+        <br />
+        </b:column>
+          <b:column medium-screen="4">
+          <p:inputText placeholder="" id="nomu" value=""
+                       ajax="true" autocomplete="false" update="@(.message)">
+            <f:facet name="prepend">
+              <b:icon name="user" />
+            </f:facet>
+          </p:inputText>
+        </b:column>
+        <br />
+        <br />
+        <b:column medium-screen="2">
+          <h:outputText value="Date de naissance :" for="username" />
+          <br />
+          <br />
+        </b:column>
+        <b:column medium-screen="4">
+          
+        <p:calendar id="button" value="#{calendarView.date3}" showOn="button" />
+         <br />
+         <br />
+        </b:column>
+        <b:column medium-screen="6" style-class="message">
+          <b:message for="username" />
+        </b:column>
+      </p:row>
+      <b:column medium-screen="2">
+          <h:outputText value="Question secrète :" for="username" />
+          <br />
+          <br />
+        </b:column>
+        <b:column medium-screen="4">
+        
+        <p:selectOneMenu id="city" value="" effect="fold" editable="true">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Question 1" itemValue="" />
+           <f:selectItem itemLabel="Question 2" itemValue="" />
+        </p:selectOneMenu>
+         <br />
+         <br />
+        </b:column>
+        <b:column medium-screen="2">
+          <h:outputText value="Réponse :" for="username" />
+          <br />
+          <br />
+        </b:column>
+       
+        <b:column medium-screen="4">
+          <p:inputText placeholder="" id="Rep" value=""
+                       ajax="true" autocomplete="false" update="@(.message)">
+            <f:facet name="prepend">
+              <b:icon name="user" />
+            </f:facet>
+          </p:inputText>
+           <br />
+         <br />
+        </b:column>
+      <b:row tooltip="This password has fancy error messages.">
+        <b:column medium-screen="2">
+          <h:outputText value="Mot de passe :" />
+          <br />
+          <br />
+        </b:column>
+        <b:column medium-screen="4">
+          <p:password placeholder="" id="password" value=""
+                         ajax="true" autocomplete="false" update="@(.message)">
+            <f:facet name="prepend">
+              <b:iconAwesome name="key" />
+            </f:facet>
+          </p:password>
+        </b:column>
+        <br />
+        <br />
+          <b:column medium-screen="2">
+          <h:outputText value="Confirmer mot de passe :" />
+          <br />
+          <br />
+        </b:column>
+        <b:column medium-screen="4">
+          <p:password placeholder="" id="confpassword" value=""
+                         ajax="true" autocomplete="false" update="@(.message)">
+            <f:facet name="prepend">
+              <b:iconAwesome name="key" />
+            </f:facet>
+          </p:password>
+        </b:column>
+       
+        <br />
+        <br />
+        <b:column medium-screen="6" styleClass="message">
+          <b:message for="password" line-break-tag=""></b:message>
+        </b:column>
+      </b:row>
+      <b:row>
+        <b:column span="2" offset="2">
+         <Center> <p:commandButton value="S'inscrire" onclick="" update="@form" look="primary"
+            style="width:50%" /> </Center>
+        </b:column>
+        
+      </b:row>
+        </fieldset>
+    </p:panel>
+  </b:container>
+
+</h:form>
+</body>
+</html>
