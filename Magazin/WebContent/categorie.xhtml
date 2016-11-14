@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:p="http://primefaces.org/ui"
+ >
+ 
+
+<h:head>
+<title>categorie</title>
+</h:head>
+<h:body>
+<p:menubar>
+<p:menuitem value="accuiel" url="accuiel.xhtml"></p:menuitem>
+<p:menuitem value="client" url="client.xhtml"></p:menuitem>
+<p:menuitem value="profile" url="profile.xhtml"></p:menuitem>
+<p:menuitem value="commande" url="commande.xhtml"></p:menuitem>
+<p:menuitem value="catégorie" url="categorie.xhtml"></p:menuitem>
+
+</p:menubar>
+
+
+
+<br> </br>
+
+<f:view>
+<h:form id="categorie">
+
+
+<p:dataTable value ="#{mbCategorie.c.SelectAll}">
+
+
+
+
+<p:column>
+<f:facet name="header">
+<p:outputLabel> nom catégorie </p:outputLabel>
+</f:facet>
+<p:inputText value="#{mbCategorie.c.NomaCat}"></p:inputText>
+</p:column>
+
+<p:column>
+<f:facet name="header">
+<p:outputLabel> code catégorie </p:outputLabel>
+
+</f:facet>
+</p:column>
+<p:inputText value="#{mbCategorie.c.CodeCat}"></p:inputText>
+<p:column>
+
+<p:button action="#{mbCategorie.supprimer_categorie}" value="Delete"></p:button>
+</p:column>
+<p:column>
+
+<p:button action="#{mbCategorie.modifier_categorie}" value="Update"></p:button>
+</p:column>
+
+<br> </br>
+
+
+
+
+</p:dataTable>
+<br> </br>
+
+
+
+
+
+
+<p:button action="ajouter_categorie.xhtml" value="ajouter"></p:button>
+
+</h:form>
+</f:view>
+<br/><br/>
+
+</h:body>
+</html>
