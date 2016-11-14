@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta charset="ISO-8859-1"/>
+<title>home</title>
+</h:head>
+
+<h:body>
+<f:view>
+
+<p:tabMenu activeIndex="#{param.i}">
+    <p:menuitem value="home" outcome="home" icon="ui-icon-star">
+        <f:param name="i" value="0" />
+        
+    </p:menuitem>
+    <p:menuitem value="Test" outcome="test" icon="ui-icon-search">
+        <f:param name="i" value="1" />
+    </p:menuitem>
+   
+</p:tabMenu>
+
+
+<h:form id="list">
+<p:panel header="Liste des Produits" style="font-size:16px">
+
+<p:dataTable var="Produit" value="#{mbe.l}" border="1" id="datat"> 
+
+ 
+  <p:column>
+	<f:facet name="header">
+	<h:outputLabel value="Label"/>
+	</f:facet>
+  
+  <h:outputText value="#{Produit.libelle}"></h:outputText>
+  </p:column>
+  
+  <p:column>
+  <f:facet name="header">
+  <h:outputLabel value="Prix TTC"/>
+  </f:facet>
+  <h:outputText value="#{Produit.prixTTC}"></h:outputText>
+  </p:column>
+  
+  
+  
+  
+ <p:column>
+  <f:facet name="header">
+  <h:outputText value="Points"></h:outputText></f:facet>
+  <h:outputText value="#{Produit.pointProd}"></h:outputText>
+  </p:column>
+  
+  <p:column>
+    <f:facet name="header">Quantite</f:facet>
+    <p:remoteCommand name="test" action="#{mbe.qte}">
+    <f:setPropertyActionListener value="code" target="#{mbe.qte}"></f:setPropertyActionListener>
+    </p:remoteCommand>
+    <p:spinner id="basic" value="#{mbe.qte}"/>
+
+  </p:column>
+  
+
+<p:column >
+<p:commandButton value="Commander" action="#{mbe.commander}">
+<f:setPropertyActionListener value="#{Produit}" target="#{mbe.pr}"/>
+</p:commandButton>
+</p:column>
+
+ </p:dataTable>
+ 
+ 
+</p:panel>
+</h:form>
+</f:view>
+
+</h:body>
+</html>
