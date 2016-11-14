@@ -8,7 +8,7 @@ import java.sql.Statement;
 public class Connexion {
 	
 	Connection c=null ; 
-	private String url="jdbc:mysql://localhost:3306/magasin_en_ligne";
+	private String url="jdbc:mysql://localhost:3306/tp0";
 	private String user="root";
 	private String password="admin";
 	private Statement st;
