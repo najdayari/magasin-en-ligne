@@ -25,7 +25,7 @@ public class ProduitDao {
 	public ArrayList<Produit> afficherProduits() {
 			
 			ResultSet rs= null; 
-			ArrayList<Produit> L= new ArrayList<Produit>(); ;
+			ArrayList<Produit> L= new ArrayList<Produit>(); 
 			
 			
 			try {
@@ -65,7 +65,7 @@ public class ProduitDao {
 	
 			 try {
 				
-		i=	s.executeUpdate("INSERT INTO lignecommande (`numcmd`, `numprod`, `qte`) VALUES ('1', "+ar.getNumProd()+", "+qte+");");
+		i=	s.executeUpdate("INSERT INTO lignecommande (`numcmd`, `numprod`, `qte`,`prixtotal`,`pointstotal`) VALUES ('1', "+ar.getNumProd()+", "+qte+","+ar.getPrixTTC()*qte+","+ar.getPointProd()*qte+");");
 			s.close();
 			 } catch (SQLException e) {
 				// TODO Auto-generated catch block
