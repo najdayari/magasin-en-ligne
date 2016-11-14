@@ -20,21 +20,14 @@ public class ManagedBean {
 	private Produit pr = new Produit();
 	private ProduitDao p = new ProduitDao();
 	private ArrayList<Produit> l = new ArrayList<Produit>();
-	private int qte=1;
+	
 	
 	public ManagedBean() {
 			
 		}
 	
 		
-	public int getQte() {
-			return qte;
-		}
-
-
-	public void setQte(int qte) {
-		this.qte = qte;
-	}
+	
 
 
 	public Produit getPr() {
@@ -65,7 +58,7 @@ public class ManagedBean {
 	
 	
 	public String commander(){
-		if (p.commander(pr,qte)!=0){
+		if (p.commander(pr)!=0){
 			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"commande","succeeded");
 			RequestContext.getCurrentInstance().showMessageInDialog(msg);
 		}
