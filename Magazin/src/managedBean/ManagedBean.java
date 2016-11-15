@@ -21,8 +21,8 @@ public class ManagedBean {
 	private ProduitDao p = new ProduitDao();
 	
 	private ArrayList<Produit> l = new ArrayList<Produit>();
+
 	private int qte=1;
-	
 	
 	public int getQte() {
 		return qte;
@@ -30,11 +30,9 @@ public class ManagedBean {
 
 
 
-
 	public void setQte(int qte) {
 		this.qte = qte;
 	}
-
 
 
 
