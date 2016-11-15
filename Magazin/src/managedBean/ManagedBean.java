@@ -19,9 +19,34 @@ public class ManagedBean {
 
 	private Produit pr = new Produit();
 	private ProduitDao p = new ProduitDao();
+	
 	private ArrayList<Produit> l = new ArrayList<Produit>();
+
+	private int qte;
 	
 	
+	public int getQte() {
+		return qte;
+	}
+
+
+
+
+	public void setQte(int qte) {
+		this.qte = qte;
+	}
+
+
+
+
+	public void setL(ArrayList<Produit> l) {
+		this.l = l;
+	}
+
+
+
+
+
 	public ManagedBean() {
 			
 		}
@@ -49,6 +74,10 @@ public class ManagedBean {
 		this.p = p;
 	}
 
+	public void setL(ArrayList<Produit> l) {
+		this.l = l;
+	}
+
 
 	public ArrayList<Produit> getL() {
 		l= p.afficherProduits();
@@ -58,7 +87,7 @@ public class ManagedBean {
 	
 	
 	public String commander(){
-		if (p.commander(pr)!=0){
+		if (p.commander(pr,qte)!=0){
 			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"commande","succeeded");
 			RequestContext.getCurrentInstance().showMessageInDialog(msg);
 		}
@@ -122,5 +151,8 @@ public class ManagedBean {
 		
 		
 	}
+
+
+
 	
 }

@@ -11,9 +11,9 @@
 </h:head>
 <h:body>
 	<f:view>
-		<h1>La liste des produits</h1>
+		<h1>Liste des produits</h1>
 		<h:form id="f">
-		<p:dataTable var="dt" id="dataTable" value="#{MBprod2.prods}" border="2">
+		<p:dataTable var="dt" id="dataTable" value="#{mbe.l}" border="2">
 			<p:column >
 				<f:facet name="header">
 					<h:outputLabel value="Numéro produit"/>
@@ -44,7 +44,74 @@
 				</f:facet>
 				<h:outputText value="#{dt.pointProd}"/>
 			</p:column>
-	</p:dataTable>
+			
+	
+	
+	<!-- Afficher code Catalogue   -->
+			<p:column >
+				<f:facet name="header">
+					<h:outputText value="Catalogue"/>
+				</f:facet>
+				<p:commandButton icon="ui-icon-zoomin" update=":f:d" oncomplete="PF('detail').show()">
+					<f:setPropertyActionListener value="#{dt}" target="#{mbe.pr}"/>
+				</p:commandButton>
+			</p:column>
+<!-- Modifier Produit  -->			
+			<p:column >
+				<f:facet name="header">
+					<h:outputText value="Modifier"/>
+				</f:facet>
+				<p:commandButton icon="ui-icon-pencil" update=":f:di" oncomplete="PF('det').show()">
+					<f:setPropertyActionListener value="#{dt}" target="#{mbe.pr}"/>
+				</p:commandButton>
+			</p:column>
+<!-- Supprimer Produit -->			
+			<p:column >
+				<f:facet name="header">
+					<h:outputText value="Supprimer"/>
+				</f:facet>
+				<p:commandButton icon=" ui-icon-closethick " update=":f:d3" oncomplete="PF('det3').show()">
+					<f:setPropertyActionListener value="#{dt}" target="#{mbe.pr}"/>
+				</p:commandButton>
+			</p:column>
+		
+		</p:dataTable>
+<!-- Traitement dialogue afficher -->		
+		<p:dialog widgetVar="detail" id="d">
+			<h:outputText value="#{mbe.pr.codeCat}" />
+		</p:dialog>
+<!-- Traitement dialogue modifier -->
+		<p:dialog widgetVar="det" id="di">
+			<p:panel header="Modifier Produit" style="font-size:16px">
+			<h:panelGrid columns="4" cellpading="10">
+				<p:outputLabel value="Libelle"></p:outputLabel>
+				<p:inputText value="#{mbe.pr.libelle}"/>
+				
+				<p:outputLabel value="Stock"></p:outputLabel>
+				<p:inputText value="#{mbe.pr.stock}"/>
+								
+				<p:outputLabel value="Prix TTC"></p:outputLabel>
+				<p:inputText value="#{mbe.pr.prixTTC}"/>
+				
+				<p:outputLabel value="Points"></p:outputLabel>
+				<p:inputText id="pv" value="#{mbe.pr.pointProd}"/>
+					
+				
+				<p:outputLabel value="Catalogue"></p:outputLabel>
+				<p:selectOneMenu value="#{mbe.pr.codeCat}">
+					<f:selectItem itemLabel="PC" itemValue="12" />					
+				</p:selectOneMenu>
+				
+				
+			<p:commandButton value="Modifier" action="#{mbe.update}"  update="dataTable" onclick="PF('det').hide()"/>
+			</h:panelGrid>
+			</p:panel>
+		</p:dialog>
+<!-- Traitement dialogue supprimer -->	
+		<p:dialog widgetVar="det3" id="d3">
+			<p:commandButton value="Confirmer suppression" action="#{mbe.delete}"  update="dataTable"/>
+		</p:dialog>
+		
 	</h:form>
 	
 	</f:view>
