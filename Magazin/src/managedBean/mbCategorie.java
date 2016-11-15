@@ -5,30 +5,31 @@ import javax.faces.application.FacesMessage;
 
 import org.primefaces.context.RequestContext;
 
+import dao.CategorieImp;
 import entities.Categorie;
 import entities.Produit;
-import dao.CategorieDao;
+
 
 public class mbCategorie {
 
 	public mbCategorie(){}
 	
 	
-	private Categorie Categorie =new Categorie();
-
+	private Categorie  c =new Categorie();
+private CategorieImp cat = new CategorieImp();
 
 	public Categorie getCategorie() {
-		return Categorie;
+		return c;
 	}
 
 
 	public void setCategorie(Categorie categorie) {
-		Categorie = categorie;
+		c = categorie;
 	}
 	
 	public String modifier_Categorie()
 	{
-		if(dao.CategorieDao.modifier_categorie(Categorie)==0)
+		if(cat.update(c)==0)
 			{FacesMessage msg=new FacesMessage(FacesMessage.SEVERITY_WARN,"Modifier","Modification effetctuée");
 			 RequestContext.getCurrentInstance().showMessageInDialog(msg);
 		}
@@ -44,7 +45,7 @@ public class mbCategorie {
 	}
 	public String  supprimer_categorie()
 	{
-		if(dao.CategorieDao.supprimer_categorie(Categorie)==0)
+		if(cat.Supprimercata(c)==0)
 			{FacesMessage msg=new FacesMessage(FacesMessage.SEVERITY_WARN,"Modifier","Modification effetctuée");
 			 RequestContext.getCurrentInstance().showMessageInDialog(msg);
 		}
