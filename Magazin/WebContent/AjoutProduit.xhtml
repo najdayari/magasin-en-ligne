@@ -12,25 +12,27 @@
 	<f:view>
 		<h:form id="AjoutProduit">
 			<p:panel header="Ajout produits" style="font-size:16px">
+				<div align="center">
 				<h:panelGrid columns="2" cellpading="10">
 				
-					<p:outputLabel value="Numero"></p:outputLabel>
+					<p:outputLabel value="Numéro" style="color:#E85D01"></p:outputLabel>
 					<p:inputText value="#{mbe.pr.numProd}" />
 					
-					<p:outputLabel value="Libelle"></p:outputLabel>
+					
+					<p:outputLabel value="Libelle" style="color:#E85D01"></p:outputLabel>
 					<p:inputText value="#{mbe.pr.libelle}"/>
 					
-					<p:outputLabel value="Stock"></p:outputLabel>
+					<p:outputLabel value="Stock" style="color:#E85D01"></p:outputLabel>
 					<p:inputText value="#{mbe.pr.stock}" />
 					
-					<p:outputLabel value="PrixTTC"></p:outputLabel>
+					<p:outputLabel value="PrixTTC" style="color:#E85D01"></p:outputLabel>
 					<p:inputText value="#{mbe.pr.prixTTC}" />
 					
-					<p:outputLabel value="Points"></p:outputLabel>
+					<p:outputLabel value="Points" style="color:#E85D01"></p:outputLabel>
 					<p:inputText value="#{mbe.pr.pointProd}" />
 					
-					<p:outputLabel value="Catégorie"></p:outputLabel>
-					<p:selectOneMenu value="#{mbe.pr.codeCat}">
+					<p:outputLabel value="Catégorie" style="color:#E85D01"></p:outputLabel>
+					<p:selectOneMenu value="#{mbe.pr.codeCat}" style="width:175px">
 						<!--  <f:selectItem itemLabel="PC" itemValue="PC" />-->
 						<f:selectItem itemLabel="Select One" itemValue="" />  
                         <f:selectItems itemLabel="#{mbe.pr.codeCat}" itemValue="#{mbe.pr.codeCat}"/>  						
@@ -40,7 +42,10 @@
 					
 					
 				</h:panelGrid>
-				<p:commandButton value="Ajouter" action="#{mbe.insert}"></p:commandButton>
+				
+				<p:commandButton value="Ajouter" action="#{mbe.insert}" style="width:300px"></p:commandButton>
+				
+				</div>
 			</p:panel>
 		</h:form>
 	</f:view>	

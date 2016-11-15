@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8"/>
+	<title>Accueil Admin</title>
+</h:head>
+
+<h:body>
+	<f:view>
+		<p:menubar activeIndex="#{param.i}">
+		    <p:menuitem value="Acceuil" outcome="Home" icon="ui-icon-home" style="color:orange">
+		        <f:param name="i" value="0" />
+		        
+		    </p:menuitem>
+		    <p:menuitem value="Accueil user" outcome="Home" icon="ui-icon-home" style="color:orange">
+		        <f:param name="i" value="1" />
+		    </p:menuitem>
+		    
+		</p:menubar>
+		
+		<p:panel header="Admin" style="font-size:16px ">
+			<div align="center">
+					<p:growl autoUpdate="true"/>
+ 
+				    <p:panelMenu style="width:300px">
+				        <p:submenu label="Menu Admin">
+				            <p:menuitem value="Afficher utilisateurs" outcome="Home" icon=" ui-icon-triangle-1-e" />
+				            <p:menuitem value="Afficher catégories" outcome="Home" icon=" ui-icon-triangle-1-e" />
+				            <p:menuitem value="Afficher la liste des produits " outcome="afficherMAJ"  icon=" ui-icon-triangle-1-e" />
+				        </p:submenu>
+				        
+				    </p:panelMenu>
+				    
+			</div>
+	
+		</p:panel>
+		
+	</f:view>
+</h:body>
+</html>

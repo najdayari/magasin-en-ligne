@@ -11,7 +11,28 @@
 </h:head>
 <h:body>
 	<f:view>
-		<h1>Liste des produits</h1>
+	<p:menubar activeIndex="#{param.i}">
+		    <p:menuitem value="Acceuil" outcome="Home" icon="ui-icon-home" style="color:orange">
+		        <f:param name="i" value="0" />
+		        
+		    </p:menuitem>
+		    
+		    <f:facet name="options">
+      	       <p:commandButton value="Déconnexion" icon="ui-icon-extlink" />
+       
+       		</f:facet>
+		    
+		
+	        <p:submenu label="Catégories" outcome="Home" style="color:orange">
+	            <p:submenu label="Liste des catégories" icon="ui-icon-contact">
+	                <p:menuitem value="Project" url="#" style="color:orange"/>
+	                <p:menuitem value="Other" url="#" style="color:orange"/>
+	            </p:submenu>
+	         
+	        </p:submenu> 
+	</p:menubar>
+	<p:panel header="Liste des produits" style="font-size:16px">
+		
 		<h:form id="f">
 		<p:dataTable var="dt" id="dataTable" value="#{mbe.l}" border="2">
 			<p:column >
@@ -113,7 +134,7 @@
 		</p:dialog>
 		
 	</h:form>
-	
+	</p:panel>
 	</f:view>
 </h:body>
 </html>
