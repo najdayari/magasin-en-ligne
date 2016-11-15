@@ -65,6 +65,7 @@ public class ProduitDao {
 	
 			 try {
 				
+				 
 		i=	s.executeUpdate("INSERT INTO lignecommande (`numcmd`, `numprod`, `qte`,`prixtotal`,`pointstotal`) VALUES ('1', "+ar.getNumProd()+", "+qte+","+ar.getPrixTTC()*qte+","+ar.getPointProd()*qte+");");
 			s.close();
 			 } catch (SQLException e) {
