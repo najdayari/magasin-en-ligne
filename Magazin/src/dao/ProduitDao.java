@@ -27,7 +27,7 @@ public class ProduitDao {
 			ResultSet rs= null; 
 			ArrayList<Produit> L= new ArrayList<Produit>(); 
 			
-			
+	
 			try {
 				s=c.getConnexion();
 				rs=s.executeQuery("Select * from produit");
