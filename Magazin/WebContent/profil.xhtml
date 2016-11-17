@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta charset="UTF-8"/>
+<title>home</title>
+</h:head>
+
+<h:body>
+<f:view>
+
+<p:menubar activeIndex="#{param.i}">
+    <p:menuitem value="Acceuil" outcome="Home" icon="ui-icon-home">
+        <f:param name="i" value="0" />
+        
+    </p:menuitem>
+    <p:menuitem value="Commande" outcome="test" icon="ui-icon-document">
+        <f:param name="i" value="1" />
+    </p:menuitem>
+    
+         
+    <f:facet name="options">
+      
+     <p:outputLabel> <p:link value="Hamza "></p:link>60pts  </p:outputLabel>
+       <p:button value="Déconnexion" outcome="SignIn" icon="ui-icon-extlink" />
+       
+       </f:facet> 
+</p:menubar>
+<br></br>
+<p:panel>
+<br></br>
+<br></br>
+<br></br>
+<div>
+<img src="/iset/profil.jpeg" alt="Photo d'utilisateur" />
+<p:link value="Historique" style="margin-left:900px"/>
+</div>
+<br></br>
+<br></br>
+<p:outputLabel>Nom d'utilisateur : </p:outputLabel>
+<p:outputLabel>Hamza</p:outputLabel>
+<br></br>
+<br></br>
+<p:outputLabel>Point Merci : </p:outputLabel>
+<p:outputLabel>60pts</p:outputLabel>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<center><p:link value="Changer mot de passe ? "> </p:link></center>
+</p:panel>
+ </f:view>
+ </h:body>
+ </html>

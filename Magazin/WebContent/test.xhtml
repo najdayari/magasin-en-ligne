@@ -4,29 +4,36 @@ xmlns:f="http://java.sun.com/jsf/core"
 xmlns:h="http://java.sun.com/jsf/html"
 xmlns:p="http://primefaces.org/ui">
 <h:head>
-<meta charset="ISO-8859-1"/>
+<meta charset="UTF-8"/>
 <title>tp2</title>
 </h:head>
 
 <h:body>
 <f:view>
 
-<p:tabMenu activeIndex="#{param.i}">
-    <p:menuitem value="home" outcome="home" icon="ui-icon-star">
+<p:menubar activeIndex="#{param.i}">
+    <p:menuitem value="Acceuil" outcome="Home" icon="ui-icon-home">
         <f:param name="i" value="0" />
     </p:menuitem>
-    <p:menuitem value="Test" outcome="test" icon="ui-icon-search">
+    <p:menuitem value="Commande" outcome="test" icon="ui-icon-document">
         <f:param name="i" value="1" />
     </p:menuitem>
-   
-</p:tabMenu>
+   <f:facet name="options">
+      
+     <p:outputLabel> <p:link value="Hamza " outcome="profil"></p:link>60pts </p:outputLabel>
+       <p:button value="Déconnexion" icon="ui-icon-extlink" outcome="SignIn" />
+       
+       </f:facet>
+</p:menubar>
+<br></br>
 <h:form id="test">
-
-<p:panel header="page test" style="font-size:16px">
+<p:panel style="height:400px">
+<p:panel header="Votre commande" style="font-size:16px">
 
 
  
  
+</p:panel>
 </p:panel>
 </h:form>
 
