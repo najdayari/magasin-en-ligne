@@ -5,6 +5,7 @@ import javax.faces.application.FacesMessage;
 
 import org.primefaces.context.RequestContext;
 
+import dao.CategorieDAO;
 import dao.CategorieImp;
 import entities.Categorie;
 import entities.Produit;
@@ -16,6 +17,7 @@ public class mbCategorie {
 	
 	
 	private Categorie  c =new Categorie();
+	private CategorieDAO categ=new CategorieDAO();
 private CategorieImp cat = new CategorieImp();
 
 	public Categorie getCategorie() {
@@ -25,6 +27,26 @@ private CategorieImp cat = new CategorieImp();
 
 	public void setCategorie(Categorie categorie) {
 		c = categorie;
+	}
+	
+	public String insert()
+	{
+		if(categ.insert(c)==0)
+			{
+			FacesMessage msg=new FacesMessage(FacesMessage.SEVERITY_WARN,"Ajouter","Insertion non effetctuée");
+			RequestContext.getCurrentInstance().showMessageInDialog(msg);
+			
+			}
+		else
+		{
+			FacesMessage msg=new FacesMessage(FacesMessage.SEVERITY_WARN,"Ajouter","Insertion effetctuée");
+			RequestContext.getCurrentInstance().showMessageInDialog(msg);
+			
+			}
+		
+		return "mmm";
+		
+		
 	}
 	
 	public String modifier_Categorie()
@@ -45,7 +67,7 @@ private CategorieImp cat = new CategorieImp();
 	}
 	public String  supprimer_categorie()
 	{
-		if(cat.Supprimercata(c)==0)
+		if(cat.delete(c)==0)
 			{FacesMessage msg=new FacesMessage(FacesMessage.SEVERITY_WARN,"Modifier","Modification effetctuÃ©e");
 			 RequestContext.getCurrentInstance().showMessageInDialog(msg);
 		}
