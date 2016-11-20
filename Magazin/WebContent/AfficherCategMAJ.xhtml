@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml" 
+		xmlns:f="http://java.sun.com/jsf/core" 
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Afficher les produits</title>
+
+</h:head>
+<h:body>
+	<f:view>
+	<p:menubar activeIndex="#{param.i}">
+		    <p:menuitem value="Acceuil" outcome="Home" icon="ui-icon-home" style="color:orange">
+		        <f:param name="i" value="0" />
+		        
+		    </p:menuitem>
+		    
+		    <f:facet name="options">
+      	       <p:commandButton value="Déconnexion" icon="ui-icon-extlink" />
+       
+       		</f:facet>
+		    
+		
+	        <p:submenu label="Catégories" outcome="Home" style="color:orange">
+	            <p:submenu label="Liste des catégories" icon="ui-icon-contact">
+	                <p:menuitem value="Project" url="#" style="color:orange"/>
+	                <p:menuitem value="Other" url="#" style="color:orange"/>
+	            </p:submenu>
+	         
+	        </p:submenu> 
+	</p:menubar>
+	<p:panel header="Liste des catégories" style="font-size:16px">
+		
+		<h:form id="f">
+		<p:dataTable var="dt" id="dataTable" value="#{mbCateg.listeCateg}" border="2">
+			<p:column >
+				<f:facet name="header">
+					<h:outputLabel value="Code catégorie"/>
+				</f:facet>
+				<h:outputText value="#{dt.codeCat}"/>
+			</p:column>	
+			<p:column >
+				<f:facet name="header">
+					<h:outputLabel value="Nom catégorie"/>
+				</f:facet>
+				<h:outputText value="#{dt.nomCat}"/>
+			</p:column>	
+<!-- Modifier Categ  -->			
+			<p:column >
+				<f:facet name="header">
+					<h:outputText value="Modifier"/>
+				</f:facet>
+				<p:commandButton icon="ui-icon-pencil" update=":f:di" oncomplete="PF('det').show()">
+					<f:setPropertyActionListener value="#{dt}" target="#{mbCateg.categ}"/>
+				</p:commandButton>
+			</p:column>
+<!-- Supprimer Categ -->			
+			<p:column >
+				<f:facet name="header">
+					<h:outputText value="Supprimer"/>
+				</f:facet>
+				<p:commandButton icon=" ui-icon-closethick " update=":f:d3" oncomplete="PF('det3').show()">
+					<f:setPropertyActionListener value="#{dt}" target="#{mbCateg.categ}"/>
+				</p:commandButton>
+			</p:column>
+		
+		</p:dataTable>
+
+<!-- Traitement dialogue modifier -->
+		<p:dialog widgetVar="det" id="di">
+			<p:panel header="Modifier catégorie" style="font-size:16px">
+			<h:panelGrid columns="4" cellpading="10">
+				<p:outputLabel value="Nom"></p:outputLabel>
+				<p:inputText value="#{mbCateg.c.nomCat}"/>
+				
+				
+				<p:commandButton value="Modifier" action="#{mbCateg.update}"  update="dataTable" onclick="PF('det').hide()"/>
+			</h:panelGrid>
+			</p:panel>
+		</p:dialog>
+<!-- Traitement dialogue supprimer -->	
+		<p:dialog widgetVar="det3" id="d3">
+			<p:commandButton value="Confirmer suppression" action="#{mbCateg.delete}"  update="dataTable"/>
+		</p:dialog>
+		
+	</h:form>
+	</p:panel>
+	</f:view>
+</h:body>
+</html>

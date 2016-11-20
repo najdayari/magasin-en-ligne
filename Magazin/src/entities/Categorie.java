@@ -2,12 +2,15 @@ package entities;
 
 
 public class Categorie {
-	public Categorie ()
-	
-	{}
 	
 	private  String CodeCat;
 	private String NomCat;
+	
+	public Categorie ()
+	{
+		
+	}
+	
 	public Categorie(String codeCat, String nomCat) {
 		super();
 		CodeCat = codeCat;

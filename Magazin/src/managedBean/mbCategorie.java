@@ -1,14 +1,19 @@
 package managedBean;
 
 
+
+
+import java.util.ArrayList;
+
 import javax.faces.application.FacesMessage;
 
 import org.primefaces.context.RequestContext;
 
 import dao.CategorieDAO;
-import dao.CategorieImp;
+//import dao.CategorieImp;
 import entities.Categorie;
-import entities.Produit;
+
+
 
 
 public class mbCategorie {
@@ -18,17 +23,27 @@ public class mbCategorie {
 	
 	private Categorie  c =new Categorie();
 	private CategorieDAO categ=new CategorieDAO();
-private CategorieImp cat = new CategorieImp();
+//private CategorieImp cat = new CategorieImp();
+	
+	private ArrayList<Categorie> listeCateg = new ArrayList<Categorie>();
 
-	public Categorie getCategorie() {
+	
+	public Categorie getC() {
 		return c;
 	}
 
-
-	public void setCategorie(Categorie categorie) {
-		c = categorie;
+	public void setC(Categorie c) {
+		this.c = c;
 	}
-	
+
+	public CategorieDAO getCateg() {
+		return categ;
+	}
+
+	public void setCateg(CategorieDAO categ) {
+		this.categ = categ;
+	}
+
 	public String insert()
 	{
 		if(categ.insert(c)==0)
@@ -51,7 +66,7 @@ private CategorieImp cat = new CategorieImp();
 	
 	public String modifier_Categorie()
 	{
-		if(cat.update(c)==0)
+		if(categ.update(c)==0)
 			{FacesMessage msg=new FacesMessage(FacesMessage.SEVERITY_WARN,"Modifier","Modification effetctuée");
 			 RequestContext.getCurrentInstance().showMessageInDialog(msg);
 		}
@@ -67,7 +82,7 @@ private CategorieImp cat = new CategorieImp();
 	}
 	public String  supprimer_categorie()
 	{
-		if(cat.delete(c)==0)
+		if(categ.delete(c)==0)
 			{FacesMessage msg=new FacesMessage(FacesMessage.SEVERITY_WARN,"Modifier","Modification effetctuée");
 			 RequestContext.getCurrentInstance().showMessageInDialog(msg);
 		}
@@ -81,6 +96,15 @@ private CategorieImp cat = new CategorieImp();
 		return "ok";
 		
 		
+	}
+
+	public ArrayList<Categorie> getListeCateg() {
+		listeCateg= categ.afficherCateg();
+		return listeCateg;
+	}
+
+	public void setListeCateg(ArrayList<Categorie> listeCateg) {
+		this.listeCateg = listeCateg;
 	}
 	
 	
