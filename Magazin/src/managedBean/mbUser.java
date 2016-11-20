@@ -2,6 +2,10 @@ package managedBean;
 
 import java.util.ArrayList;
 
+import javax.faces.application.FacesMessage;
+
+import org.primefaces.context.RequestContext;
+
 import dao.UserClientDAO;
 import entities.UserClient;
 
@@ -36,5 +40,20 @@ public class mbUser {
 		this.l = l;
 	}
 	
-	
+	public String update()
+	{
+		if(usd.update(uc)==0)
+			{FacesMessage msg=new FacesMessage(FacesMessage.SEVERITY_WARN,"Modifier","Modification non effetctuée");
+			 RequestContext.getCurrentInstance().showMessageInDialog(msg);
+		}
+		else
+			{
+			FacesMessage msg=new FacesMessage(FacesMessage.SEVERITY_WARN,"Modifier","Modificatio non effetctuée");
+			RequestContext.getCurrentInstance().showMessageInDialog(msg);
+			}
+		
+		return "mmm";
+		
+		
+	}
 }

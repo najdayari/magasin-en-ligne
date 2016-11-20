@@ -51,5 +51,18 @@ public class UserClientDAO {
 		return L;
 		
 }
+// Il faut corriger cette requette avec le id_user= id session	
+	public int update(UserClient u)
+	{
+		int res=0;
+		
+		try{
+			res=s.executeUpdate("update client set id_user='"+u.getId()+"', Nom='"+u.getNom()+"', Prenom='"+u.getPrenom()+"', DateNais='"+u.getDatenais()+"', Login='"+u.getLogin()+"', Pwd='"+u.getPwd()+"', QuestSec='"+u.getQuestSec()+"', PointUser='"+u.getPtUser()+"' where id_user="+u.getId());}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return res;
+	}
 
 }

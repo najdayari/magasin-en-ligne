@@ -7,17 +7,24 @@
 		xmlns:p="http://primefaces.org/ui">
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Liste user</title>
+<title>Profil User</title>
 
 </h:head>
 <h:body>
 	<f:view>
 	<p:menubar activeIndex="#{param.i}">
+		    
 		    <p:menuitem value="Acceuil" outcome="Home" icon="ui-icon-home" style="color:orange">
 		        <f:param name="i" value="0" />
 		        
 		    </p:menuitem>
-		    		
+		    
+		    <f:facet name="options">
+      	       <p:commandButton type="button" value="Déconnexion"  url="SignIn.xhtml" icon="ui-icon-extlink" />
+       
+       		</f:facet>
+		    
+		
 	        <p:submenu label="Catégories" outcome="Home" style="color:orange">
 	            <p:submenu label="Liste des catégories" icon="ui-icon-contact">
 	                <p:menuitem value="Project" url="#" style="color:orange"/>
@@ -25,14 +32,9 @@
 	            </p:submenu>
 	         
 	        </p:submenu> 
-	       
 	</p:menubar>
 	<p:panel header="Liste des utilisateurs" style="font-size:16px">
-		<p:menubar value="#mbU">
-			<f:facet name="options">
-	            <p:inputText style="margin-right:10px" placeholder="Search"/>
-	        </f:facet>
-		</p:menubar>
+
 		<h:form id="f">
 		
 		<p:dataTable var="dt" id="dataTable" value="#{mbU.l}" border="2">
@@ -61,8 +63,57 @@
 				</f:facet>
 				<h:outputText value="#{dt.ptUser}"/>
 			</p:column>
+			<p:column >
+				<f:facet name="header">
+					<h:outputText value="Login"/>
+				</f:facet>
+				<h:outputText value="#{dt.login}"/>
+			</p:column>
+			<p:column >
+				<f:facet name="header">
+					<h:outputText value="Mot de passe"/>
+				</f:facet>
+				<h:outputText value="#{dt.pwd}"/>
+			</p:column>
+<!-- Modifier user  -->			
+			<p:column >
+				<f:facet name="header">
+					<h:outputText value="Modifier"/>
+				</f:facet>
+				<p:commandButton icon="ui-icon-pencil" update=":f:di" oncomplete="PF('det').show()">
+					<f:setPropertyActionListener value="#{dt}" target="#{mbU.usd}"/>
+				</p:commandButton>
+			</p:column>
+
+		
 		</p:dataTable>
+
+<!-- Traitement dialogue modifier -->
+		<p:dialog widgetVar="det" id="di">
+			<p:panel header="Modifier catégorie" style="font-size:16px">
+			<h:panelGrid columns="4" cellpading="10">
+				<p:outputLabel value="Nom"></p:outputLabel>
+				<p:inputText value="#{mbU.uc.nom}"/>
+				
+				<p:outputLabel value="Prenom"></p:outputLabel>
+				<p:inputText value="#{mbU.uc.prenom}"/>
+				
+				<p:outputLabel value="Date de naissance"></p:outputLabel>
+				<p:inputText value="#{mbU.uc.datenais}"/>
+				
+				<p:outputLabel value="Login"></p:outputLabel>
+				<p:inputText value="#{mbU.uc.login}"/>
+				
+				<p:outputLabel value="Mot de passe"></p:outputLabel>
+				<p:inputText value="#{mbU.uc.pwd}"/>
+				
 								
+				<p:commandButton value="Modifier" action="#{mbU.update}"  update="dataTable" onclick="PF('det').hide()"/>
+			</h:panelGrid>
+			</p:panel>
+		</p:dialog>
+
+		
 	</h:form>
 	</p:panel>
 	</f:view>
