@@ -29,5 +29,10 @@
 		<managed-bean-class>managedBean.mbCategorie</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>mbU</managed-bean-name>
+		<managed-bean-class>managedBean.mbUser</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
 
 </faces-config>

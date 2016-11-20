@@ -17,6 +17,10 @@ xmlns:p="http://primefaces.org/ui">
 		    </p:menuitem>
 		    <p:menuitem value="Accueil user" outcome="Home" icon="ui-icon-home" style="color:orange">
 		        <f:param name="i" value="1" />
+		    </p:menuitem>
+		     <p:menuitem value="Users" outcome="AfficherUser" icon="ui-icon-home" style="color:orange">
+		        <f:param name="i" value="2" />
+		        
 		    </p:menuitem>	    
 		</p:menubar>
 		
@@ -27,7 +31,7 @@ xmlns:p="http://primefaces.org/ui">
 				    <p:panelMenu style="width:300px">
 				        <p:submenu label="Menu Admin">
 				        	<p:menuitem value="Afficher commandes" outcome="Home" icon=" ui-icon-triangle-1-e" />
-				            <p:menuitem value="Afficher utilisateurs" outcome="Home" icon=" ui-icon-triangle-1-e" />
+				            <p:menuitem value="Afficher utilisateurs" outcome="AfficherUser" icon=" ui-icon-triangle-1-e" />
 				            <p:menuitem value="Afficher catégories" outcome="Home" icon=" ui-icon-triangle-1-e" />
 				            <p:menuitem value="Ajouter catégories" outcome="AjoutCateg" icon=" ui-icon-triangle-1-e" />
 				            <p:menuitem value="Afficher produits " outcome="afficherMAJ"  icon=" ui-icon-triangle-1-e" />
